@@ -20,7 +20,7 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 characterAmountNumber.addEventListener('input', syncCharacterAmount)
 characterAmountRange.addEventListener('input', syncCharacterAmount)
 
-form.addEventListener('submit', e => {
+const generate = (e) => {
     e.preventDefault()
     const characterAmount = characterAmountNumber.value
     const includeUppercase = includeUppercaseElement.checked
@@ -28,7 +28,17 @@ form.addEventListener('submit', e => {
     const includeSymbols = includeSymbolsElement.checked
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
     passwordDisplay.innerText = password
-})
+}
+
+
+form.addEventListener('submit', generate);
+
+characterAmountRange.addEventListener('change', generate)
+
+includeUppercaseElement.addEventListener('change', generate)
+includeNumbersElement.addEventListener('change', generate)
+includeSymbolsElement.addEventListener('change', generate)
+
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
     let charCodes = LOWERCASE_CHAR_CODES

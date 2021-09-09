@@ -171,11 +171,13 @@ a {
 
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
   align-self: flex-end;
+  width: 75vw;
   margin-bottom: 20px;
+  color: white;
 }
 
 .footer a:hover {

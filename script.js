@@ -1,5 +1,4 @@
-
-
+/* Show time */
 function formatDate() {
     const dateNode = document.getElementById('showDate');
     setInterval(() => {
@@ -7,6 +6,5 @@ function formatDate() {
         dateNode.textContent = date.toDateString() + ' ' + date.toLocaleTimeString('en-US');
     }, 1000);
 }
-
 
 formatDate();

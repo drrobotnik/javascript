@@ -44,7 +44,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 75vw;
+  width: 78vw;
 }
 
 .logo {
@@ -92,17 +92,17 @@ a {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 2.5rem;
   /* color: white; */
-  margin-bottom: 100px;
+  top: 200px;
 }
 
 .projects-cards {
-  position: relative;
+  position: absolute;
   width: 80%;
   height: 400px;
   display: flex;
@@ -140,7 +140,7 @@ a {
 .card p {
   text-align: center;
   margin-top: 24px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .card-icon-banner {
@@ -178,7 +178,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 75vw;
+  width: 78vw;
   height: 50px;
 }
 

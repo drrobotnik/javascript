@@ -114,7 +114,6 @@ li:hover {
 li {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 20px 40px 50px 40px;
   box-sizing: border-box;
   font-size: 3rem;
@@ -264,7 +263,14 @@ li {
     height: 80px;
     background-color: #1b1b1b;
     width: 100vw;
-    z-index: 1;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .pizza {
+    display: none;
   }
 
   .menu {
@@ -276,10 +282,6 @@ li {
   }
 
   .footer {
-    display: none;
-  }
-
-  .menu {
     display: none;
   }
 }

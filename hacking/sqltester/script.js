@@ -1,20 +1,23 @@
 const targetURL = document.getElementById("targetURL").value;
 const results = document.getElementById("results");
 
-// gets data from API and sets the content of #result div
-async function testTarget() {
+
+function testTarget() {
     results.innerHTML = "Testing....";
     try {
-        const res = await fetch("https://api.github.com/users/gulshansainis");
-        const data = await res;
-
-        console.log(data);
-        results.innerText = JSON.stringify(data);
+        xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) { results.innerHTML = this.responseText; }
+                if (this.status == 404) { results.innerHTML = "<h1>Page not found</h1>"; }
+            }
+        }
+        xhr.open("GET", "https://www.google.com", true);
+        xhr.responseType = "document";
+        xhr.send();
+        console.log(xhr)
+        return;
     } catch (error) {
         console.log(error);
     }
 }
-
-
-// add event listener for #fetchdata button
-// targetURL.addEventListener("click", testTarget);

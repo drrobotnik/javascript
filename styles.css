@@ -10,95 +10,150 @@
 
 body {
   background-color: #131313;
-  display: flex;
+  /* display: flex;
   min-height: 100vh;
-  width: 100vw;
+  width: 100vw; */
   /* overflow: hidden; */
 }
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(110, 90, 110);
+}
+
+.active,
+.links,
+li:hover {
+  background-color: #ff8177;
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  color: rgb(145, 86, 145);
+  transition: ease-in 200ms;
+  transform: scale(1.3);
+}
+
+.pizza a:hover {
+  color: purple;
+  transition: ease-in 200ms;
 }
 
 .container {
   position: absolute;
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
-}
-
-.navbar-container {
-  position: fixed;
-  background-color: #1b1b1b;
-  display: flex;
-  width: 100%;
-  height: 100px;
-  flex-direction: row;
-  justify-content: center;
-  z-index: 1;
 }
 
 .navbar {
+  position: fixed;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 78vw;
+  left: 0;
+  height: 100%;
+  background-color: #1b1b1b;
+  width: 130px;
 }
 
 .logo {
+  position: absolute;
+  top: 20px;
   background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  display: block;
-  align-items: center;
-  cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 5rem;
+  color: white;
+}
+
+.logo:hover {
+  transition: ease-in 200ms;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .menu {
-  background-color: #ff8177;
-  background-image: linear-gradient(to right, #ff0844 0%, #f7673c 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  display: block;
-  font-size: 1.2rem;
+  position: relative;
+  top: 160px;
+  height: 70%;
+  width: 100%;
+  padding-top: 10px;
+  list-style-type: none;
+  overflow-y: auto;
+  box-shadow: inset 0px 20px 8px -10px #272727,
+    inset 0px -20px 8px -10px #272727;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 50px 40px;
+  box-sizing: border-box;
+  font-size: 3rem;
+}
+
+.pizza {
+  position: absolute;
+  bottom: 60px;
+  font-size: 3rem;
+  color: white;
 }
 
 .projects-container {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
+  left: 50px;
+  width: 85%;
+  height: 100%;
 }
 
 .projects-title {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
   background-color: #ff8177;
-  background-image: linear-gradient(to right, #ff0844 0%, #f7673c 100%);
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  position: absolute;
-  display: block;
-  flex-direction: row;
-  align-items: center;
   font-size: 2.5rem;
-  /* color: white; */
-  top: 180px;
+  top: 0px;
 }
 
 .projects-cards {
@@ -107,9 +162,10 @@ a {
   height: 400px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-flow: row wrap;
+  margin-top: 200px;
 }
 
 .card {
@@ -163,7 +219,7 @@ a {
 .footer-container {
   position: fixed;
   bottom: 0;
-  background-color: #1b1b1b;
+
   display: flex;
   width: 100%;
   height: 50px;
@@ -200,5 +256,30 @@ a {
 @media screen and (max-width: 960px) {
   .projects-title {
     top: 150px;
+  }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    background-color: #1b1b1b;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    overflow-y: auto;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .menu {
+    display: none;
   }
 }

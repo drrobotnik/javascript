@@ -1,0 +1,104 @@
+body {
+  background-color: #333;
+  margin: 0;
+  color: white;
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.container {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  background-color: #006699;
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+  width: 400px;
+  height: auto;
+  top: 300px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.number-input {
+  width: 2rem;
+}
+
+.target-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  margin: 40px 0px 40px 0px;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 400px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn {
+  grid-column: span 2;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: #ffffff33;
+}
+
+.results-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 40px;
+}
+
+.pass {
+  font-size: 3rem;
+  color: green;
+}
+
+.fail {
+  font-size: 3rem;
+  color: red;
+}
+
+.results {
+  font-size: 1rem;
+  margin-left: 10px;
+}

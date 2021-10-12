@@ -14,7 +14,8 @@
 <body>
   <div class="container">
     <h1 class="title">SQL Injection Test</h1>
-    <input type="text" placeholder="https://example.com" class="target-box" id="targetURL"></input>
+    <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box"
+      id="targetURL"></input>
     <div class="payload-options">Payload Options</div>
     <div class="switches">
       <li>
@@ -49,6 +50,9 @@
       </div>
       <div class="fail">
         <i class="far fa-times-circle"></i>
+      </div>
+      <div class="loading">
+        <i class="fas fa-circle-notch fa-spin"></i>
       </div>
       <div id="results" class="results">Results go here</div>
     </div>

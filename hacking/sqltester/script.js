@@ -1,26 +1,24 @@
-const targetURL = document.getElementById("targetURL").value;
+const targetURL = document.getElementById('targetURL').value;
+const singleTick = "'";
+
+const url = `https://cors.bridged.cc/${targetURL}`;
 const results = document.getElementById("results");
 
+// need some function to take targetURL, remove last number and replace with payload
 
-function testTarget() {
-    results.innerHTML = "Testing....";
+
+async function testTarget() {
+    results.innerHTML = "Testing...";
     try {
-        xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) { results.innerHTML = this.responseText; }
-                if (this.status == 404) { results.innerHTML = "<h1>Page not found</h1>"; }
-            }
-        }
-        xhr.open("GET", `https://cors.bridged.cc/${targetURL}`, true);
-        xhr.responseType = "document";
-        xhr.send();
-        console.log(xhr)
-        return;
-    } catch (error) {
+        response = await fetch("https://cors.bridged.cc/http://www.webscantest.com/datastore/search_get_by_id.php?id=1");
+        data = await response.text();
+        console.log(data);
+        console.log(targetURL.value);
+    }
+    catch (error) {
         console.log(error);
     }
-
-    // then search for text "error" or "syntax" in response body
-    // if either are found then show fail with message else show pass with message
 }
+
+// then search for text "error" or "syntax" in response body
+    // if either are found then show fail with message else show pass with message

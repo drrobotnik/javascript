@@ -191,6 +191,11 @@ label {
   color: red;
 }
 
+.loading {
+  font-size: 3rem;
+  color: #18172c7a;
+}
+
 .results {
   font-size: 1rem;
   margin-left: 10px;

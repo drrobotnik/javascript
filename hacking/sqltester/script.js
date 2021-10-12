@@ -12,7 +12,7 @@ function testTarget() {
                 if (this.status == 404) { results.innerHTML = "<h1>Page not found</h1>"; }
             }
         }
-        xhr.open("GET", "https://www.google.com", true);
+        xhr.open("GET", `https://cors.bridged.cc/${targetURL}`, true);
         xhr.responseType = "document";
         xhr.send();
         console.log(xhr)
@@ -20,4 +20,7 @@ function testTarget() {
     } catch (error) {
         console.log(error);
     }
+
+    // then search for text "error" or "syntax" in response body
+    // if either are found then show fail with message else show pass with message
 }

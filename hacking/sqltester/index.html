@@ -15,20 +15,34 @@
   <div class="container">
     <h1 class="title">SQL Injection Test</h1>
     <input type="text" placeholder="https://example.com" class="target-box" id="targetURL"></input>
-    <form id="passwordGeneratorForm" class="form">
+    <div class="payload-options">Payload Options</div>
+    <div class="switches">
+      <li>
+        <input type="checkbox" id="1">
+        <label for="1">
+          <span>Check for single tick = '</span>
+          <span></span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="2">
+        <label for="2">
+          <span>Exercise</span>
+          <span></span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="3">
+        <label for="3">
+          <span>Watch a Movie</span>
+          <span></span>
+        </label>
+      </li>
+    </div>
 
-      <label for="includeSingleTick">Check for single tick '</label>
-      <input type="checkbox" id="includeUppercase">
+    <button type="submit" class="btn" onClick="testTarget()">Test</button>
 
-      <label for="includeNumbers">Check for...</label>
-      <input type="checkbox" id="includeNumbers">
 
-      <label for="includeSymbols">Check for...</label>
-      <input type="checkbox" id="includeSymbols">
-
-      <button type="submit" class="btn" onClick="testTarget()">Test</button>
-
-    </form>
     <div class="results-box">
       <div class="pass">
         <i class="far fa-check-circle"></i>

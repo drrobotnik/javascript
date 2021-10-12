@@ -14,8 +14,8 @@
 <body>
   <div class="container">
     <h1 class="title">SQL Injection Test</h1>
-    <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box"
-      id="targetURL"></input>
+    <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="targetURL"
+      onchange="targetURL(this)"></input>
     <div class="payload-options">Payload Options</div>
     <div class="switches">
       <li>

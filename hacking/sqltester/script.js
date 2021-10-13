@@ -25,6 +25,13 @@ function inputValidation(input) {
     return validURL.protocol === "http:" || validURL.protocol === "https:";
 }
 
+function getDate() {
+    const date = new Date();
+    date.textContent = date.toDateString() + ' ' + date.toLocaleTimeString('en-US');
+    output.innerHTML = date.textContent;
+}
+
+
 // Get user input url
 function getURL(input) {
     target = input.value;
@@ -63,10 +70,34 @@ function option3() {
     }
 }
 
+//Print function
+function printReport() {
+
+}
+
+// Download function
+function downloadReport(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+document.getElementById("download-btn")
+    .addEventListener("click", function () {
+        var text = output;
+        var filename = "SqlTest.txt";
+        downloadReport(filename, text);
+    })
+
+
 // test url
 // http://www.webscantest.com/datastore/search_get_by_id.php?id=1
 
 async function testTarget() {
+    getDate();
     inputValidation();
     output.innerHTML = "Target: " + target + "<br><br>";
     option1();

@@ -19,8 +19,8 @@
         <div class="target-icon">
           <i class="fas fa-bug"></i>
         </div>
-        <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="getURL"
-          onchange="getURL(this)"></input>
+        <input type="url" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="getURL"
+          onchange="getURL(this)" required></input>
       </div>
       <div class="payload-options">Payload Options</div>
       <div class="switches">
@@ -60,7 +60,7 @@
           <i class="far fa-times-circle"></i>
         </div>
         <div>
-          <i class="fas fa-circle-notch spinner"></i>
+          <i class="fas fa-spinner spinner"></i>
         </div>
         <div id="results" class="results">Results go here</div>
       </div>

@@ -1,3 +1,8 @@
+// Set cors proxy url
+// const proxy = "https://cors.bridged.cc/";
+const proxy = "https://api.codetabs.com/v1/proxy?quest=";
+// const proxy = "https://crossorigin.me/";
+
 // Set variables for payloads
 const singleTick = "'";
 const doubleQuote = '"';
@@ -7,50 +12,55 @@ const results = document.getElementById("results");
 const output = document.getElementById("output");
 
 // input validation
-function inputValidation() {
+function inputValidation(input) {
+    let validURL;
     if (document.getElementById("getURL").value.length == 0) {
         output.innerHTML = "Please enter in a target URL.";
     }
+    try {
+        validURL = new URL(input);
+    } catch (error) {
+        return false;
+    }
+    return validURL.protocol === "http:" || validURL.protocol === "https:";
 }
 
 // Get user input url
 function getURL(input) {
     target = input.value;
-    newURL = target.substring(0, target.length - 1);
-    console.log(newURL);
-    console.log(singleTick);
-    console.log(doubleQuote);
-    console.log(logic);
+    console.log("Target:" + target);
+
     return target;
 }
 
 // If first payload is checked
 function option1() {
-    payload = newURL + singleTick;
-    output.insertAdjacentHTML('beforeend', 'Payload: ' + singleTick + "<br><br>")
-    console.log("Payload: " + payload);
-    return payload;
+    if (document.getElementById("1").checked) {
+        payload = proxy + target + singleTick;
+        output.insertAdjacentHTML('beforeend', 'Payload: ' + singleTick + "<br><br>")
+        console.log("Payload: " + singleTick);
+        console.log("Testing: " + payload);
+    }
 }
 
 // If 2nd payload is checked
 function option2() {
-    payload = newURL + doubleQuote;
-    output.insertAdjacentHTML('beforeend', 'Payload: ' + doubleQuote + "<br><br>")
-    console.log("Payload: " + payload);
-    return payload;
+    if (document.getElementById("2").checked) {
+        payload = proxy + target + doubleQuote;
+        output.insertAdjacentHTML('beforeend', 'Payload: ' + doubleQuote + "<br><br>")
+        console.log("Payload: " + doubleQuote);
+        console.log("Testing: " + payload);
+    }
 }
 
 // If 3rd payload is checked
 function option3() {
-    payload = newURL + logic;
-    output.insertAdjacentHTML('beforeend', 'Payload: ' + logic + "<br><br>")
-    console.log("Payload: " + payload);
-    return payload;
-}
-
-// Combine input from user and checked payload option
-function Payload(url, payload) {
-    target = url + payload;
+    if (document.getElementById("3").checked) {
+        payload = proxy + target + logic;
+        output.insertAdjacentHTML('beforeend', 'Payload: ' + logic + "<br><br>")
+        console.log("Payload: " + logic);
+        console.log("Testing: " + payload);
+    }
 }
 
 // test url
@@ -59,19 +69,19 @@ function Payload(url, payload) {
 async function testTarget() {
     inputValidation();
     output.innerHTML = "Target: " + target + "<br><br>";
+    option1();
+    option2();
     option3();
+    output.insertAdjacentHTML("beforeend", "Testing..." + "<br><br>");
     results.innerHTML = "Testing...";
     try {
-        response = await fetch(`https://cors.bridged.cc/${payload}`);
+        response = await fetch(payload);
         data = await response.text();
-        if (!data.ok) {
-            results.innerHTML = "Something went wrong: " + response;
-        }
-        console.log(data);
+        output.insertAdjacentText("beforeend", data);
     }
     catch (error) {
         results.innerHTML = error;
-        output.insertAdjacentHTML("beforeend", error);
+        output.insertAdjacentText("beforeend", error);
         console.log(error);
     }
     return;

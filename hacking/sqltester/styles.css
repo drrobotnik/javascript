@@ -32,7 +32,7 @@ body {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  top: 150px;
+  top: 100px;
   height: 600px;
   width: 100%;
 }
@@ -47,7 +47,7 @@ body {
   border-radius: 1rem 0rem 0rem 1rem;
   border: 2px solid black;
   width: 480px;
-  height: auto;
+  height: 700px;
   box-sizing: border-box;
 }
 
@@ -234,7 +234,7 @@ label {
   font-size: 3rem;
   color: rgb(78, 46, 46);
   -webkit-animation: spinner 1.5s linear infinite; /* Safari */
-  animation: spinner 0.5s linear infinite;
+  animation: spinner 0.4s linear infinite;
 }
 
 @keyframes spinner {
@@ -253,11 +253,12 @@ label {
 
 .proof {
   background-color: #006699;
+  box-sizing: border-box;
   padding: 0.5rem;
   border-radius: 0rem 1rem 1rem 0rem;
   border: 2px solid black;
   width: 480px;
-  height: auto;
+  height: 700px;
 }
 
 .output-field {
@@ -269,6 +270,7 @@ label {
   box-sizing: border-box;
   font-family: sans-serif;
   overflow-wrap: break-word;
+  overflow: auto;
 }
 
 /* Portrait and Landscape */

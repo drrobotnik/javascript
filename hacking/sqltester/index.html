@@ -8,53 +8,67 @@
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <title>SQL Injection Test</title>
+  <title>Simple SQL Injection Test</title>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="title">SQL Injection Test</h1>
-    <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="targetURL"
-      onchange="targetURL(this)"></input>
-    <div class="payload-options">Payload Options</div>
-    <div class="switches">
-      <li>
-        <input type="checkbox" id="1">
-        <label for="1">
-          <span>Check for single tick = '</span>
-          <span></span>
-        </label>
-      </li>
-      <li>
-        <input type="checkbox" id="2">
-        <label for="2">
-          <span>Exercise</span>
-          <span></span>
-        </label>
-      </li>
-      <li>
-        <input type="checkbox" id="3">
-        <label for="3">
-          <span>Watch a Movie</span>
-          <span></span>
-        </label>
-      </li>
+    <div class="tester">
+      <h1 class="title">Simple <font color="red"> SQL</font> Injection Test</h1>
+      <div class="target-area">
+        <div class="target-icon">
+          <i class="fas fa-bug"></i>
+        </div>
+        <input type="text" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="getURL"
+          onchange="getURL(this)"></input>
+      </div>
+      <div class="payload-options">Payload Options</div>
+      <div class="switches">
+        <li>
+          <input type="checkbox" id="1">
+          <label for="1">
+            <span class="payload-description">Single tick</span>
+            <div class="payload">'</div>
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="2">
+          <label for="2">
+            <span class="payload-description">Double quote</span>
+            <div class="payload">''</div>
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="3">
+          <label for="3">
+            <span class="payload-description">Logic</span>
+            <div class="payload">1 + 1</div>
+            <span></span>
+          </label>
+        </li>
+      </div>
+
+      <button type="submit" class="btn" onClick="testTarget()">Test</button>
+
+      <div class="results-box">
+        <div class="pass">
+          <i class="far fa-check-circle"></i>
+        </div>
+        <div class="fail">
+          <i class="far fa-times-circle"></i>
+        </div>
+        <div>
+          <i class="fas fa-circle-notch spinner"></i>
+        </div>
+        <div id="results" class="results">Results go here</div>
+      </div>
     </div>
-
-    <button type="submit" class="btn" onClick="testTarget()">Test</button>
-
-
-    <div class="results-box">
-      <div class="pass">
-        <i class="far fa-check-circle"></i>
+    <div class="proof">
+      <div id="output" class="output-field">
+        Output...
       </div>
-      <div class="fail">
-        <i class="far fa-times-circle"></i>
-      </div>
-      <div class="loading">
-        <i class="fas fa-circle-notch fa-spin"></i>
-      </div>
-      <div id="results" class="results">Results go here</div>
     </div>
   </div>
 </body>

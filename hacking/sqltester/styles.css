@@ -6,6 +6,7 @@
   --blue: #18172c7a;
   --green: #00d084;
   --pink: #ff4b77;
+  --charcoal: rgb(36, 36, 36);
 }
 
 li {
@@ -16,8 +17,8 @@ li {
 body {
   background-color: #333;
   margin: 0;
+  padding: 0;
   color: white;
-  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,17 +27,62 @@ body {
 }
 
 .container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  top: 150px;
+  height: 600px;
+  width: 100%;
+}
+
+.tester {
   display: flex;
   justify-content: top;
   align-items: center;
   flex-direction: column;
   background-color: #006699;
-  padding: 3rem;
-  border-radius: 1rem;
+  padding: 2rem;
+  border-radius: 1rem 0rem 0rem 1rem;
   border: 2px solid black;
-  width: 400px;
+  width: 480px;
   height: auto;
-  top: 300px;
+  box-sizing: border-box;
+}
+
+.target-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 500px;
+  width: 100%;
+}
+
+.target-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  border-radius: 5px 0px 0px 5px;
+  color: white;
+  height: 3rem;
+  width: 60px;
+  font-size: 2rem;
+}
+
+.target-box {
+  background-color: white;
+  color: black;
+  margin: 40px 0px 40px 0px;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 100%;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1rem;
 }
 
 .payload-options {
@@ -115,13 +161,16 @@ body {
   background-size: 14px 14px;
 }
 
-.options {
-  display: grid;
-  grid-template-columns: auto auto;
-  row-gap: 1rem;
-  column-gap: 3rem;
-  justify-content: center;
-  align-items: center;
+.payload-description {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.payload {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
 
 .title {
@@ -136,21 +185,6 @@ label {
 [type="checkbox"] {
   position: absolute;
   left: -9999px;
-}
-
-.target-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: black;
-  margin: 40px 0px 40px 0px;
-  padding: 0.5rem;
-  border: 1px solid #333;
-  height: 2rem;
-  width: 400px;
-  border-radius: 0.5rem;
-  font-size: 1rem;
 }
 
 .btn {
@@ -196,7 +230,54 @@ label {
   color: #18172c7a;
 }
 
+.spinner {
+  font-size: 3rem;
+  color: rgb(78, 46, 46);
+  -webkit-animation: spinner 1.5s linear infinite; /* Safari */
+  animation: spinner 0.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .results {
   font-size: 1rem;
   margin-left: 10px;
+}
+
+.proof {
+  background-color: #006699;
+  padding: 0.5rem;
+  border-radius: 0rem 1rem 1rem 0rem;
+  border: 2px solid black;
+  width: 480px;
+  height: auto;
+}
+
+.output-field {
+  background: var(--charcoal);
+  width: 100%;
+  height: 100%;
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  overflow-wrap: break-word;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .tester {
+    width: 50%;
+  }
+
+  .proof {
+    width: 100%;
+  }
 }

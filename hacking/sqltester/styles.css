@@ -39,10 +39,6 @@ body {
 }
 
 .tester {
-  display: flex;
-  justify-content: top;
-  align-items: center;
-  flex-direction: column;
   background-color: #006699;
   padding: 2rem;
   border-radius: 1rem 0rem 0rem 1rem;
@@ -88,6 +84,8 @@ body {
 }
 
 .payload-options {
+  display: flex;
+  justify-content: center;
   font-size: 1.5rem;
 }
 
@@ -212,7 +210,7 @@ label {
   cursor: pointer;
   border-radius: 1rem;
   margin-top: 10px;
-  width: 420px;
+  width: 100%;
 }
 
 .btn:hover {
@@ -312,12 +310,18 @@ label {
 }
 
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-  .tester {
-    width: 50%;
+@media only screen and (min-device-width: 390px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    top: 100px;
+    height: 600px;
+    width: 100vw;
   }
-
-  .proof {
+  .tester {
     width: 100%;
   }
 }

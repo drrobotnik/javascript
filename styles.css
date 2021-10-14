@@ -252,17 +252,58 @@ li {
 
 /* -- Mobile -- */
 
-@media screen and (max-width: 960px) {
+/* Portrait and Landscape */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .container {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
   .projects-title {
-    top: 150px;
+    display: inline-block;
+    width: 100%;
+    font-size: 2rem;
+    top: 0px;
+  }
+
+  .projects-cards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+
+    width: 100%;
   }
 
   .navbar {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     position: fixed;
     bottom: 0;
-    height: 80px;
+    height: 120px;
     background-color: #1b1b1b;
-    width: 100vw;
+    width: 100%;
+    z-index: 2;
   }
 
   .logo {
@@ -274,11 +315,30 @@ li {
   }
 
   .menu {
+    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    padding-top: 10px;
     list-style-type: none;
-    overflow-y: auto;
+    overflow-x: visible;
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: inline-block;
+  }
+
+  ul {
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  li {
+    float: left;
   }
 
   .footer {

@@ -50,6 +50,21 @@
         </li>
       </div>
 
+      <div class="proxy-container">
+        <div class="proxy-block">
+          <label for="proxy1">Proxy 1</label>
+          <input style="display:block;" class="radio" id="proxy1" type="radio" name="radio" checked />
+        </div>
+        <div class="proxy-block">
+          <label for="proxy2">Proxy 2</label>
+          <input style="display:block;" class="radio" id="proxy2" type="radio" name="radio" />
+        </div>
+        <div class="proxy-block">
+          <label for="proxy3">Proxy 3</label>
+          <input style="display:block;" class="radio" id="proxy3" type="radio" name="radio" />
+        </div>
+      </div>
+
       <button type="submit" class="btn" onClick="testTarget()">Test</button>
 
       <div class="results-box">
@@ -59,10 +74,10 @@
         <div class="fail">
           <i class="far fa-times-circle"></i>
         </div>
-        <div>
+        <div id="testing" class="testing">
           <i class="fas fa-spinner spinner"></i>
         </div>
-        <div id="results" class="results">Results go here</div>
+        <div id="results" class="results"></div>
       </div>
     </div>
     <div class="proof">

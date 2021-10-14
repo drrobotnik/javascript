@@ -1,6 +1,11 @@
 // Set cors proxy url
+// doesnt work
 // const proxy = "https://cors.bridged.cc/";
+
+// works
 const proxy = "https://api.codetabs.com/v1/proxy?quest=";
+
+// doesnt work
 // const proxy = "https://crossorigin.me/";
 
 // Set variables for payloads
@@ -10,6 +15,7 @@ const logic = "1+1";
 
 const results = document.getElementById("results");
 const output = document.getElementById("output");
+
 
 // input validation
 function inputValidation(input) {
@@ -70,6 +76,30 @@ function option3() {
     }
 }
 
+// set proxy for cors
+// function getProxy() {
+//     if (document.getElementById("proxy1").checked) {
+//         proxy = "https://api.codetabs.com/v1/proxy?quest=";
+//     } else if (document.getElementById("proxy2").checked) {
+//         proxy = "https://crossorigin.me/";
+//     } else if (document.getElementById("proxy3").checked) {
+//         proxy = "https://cors.bridged.cc/";
+//     } else {
+//         proxy = "https://api.codetabs.com/v1/proxy?quest=";
+//     }
+// }
+
+// Show testing status spinner
+function showLoading() {
+    testing = document.getElementById("testing");
+    if (testing.style.display === "none") {
+        testing.style.display = "block";
+    } else {
+        testing.style.display = "none";
+    }
+}
+showLoading();
+
 //Print function
 function printReport() {
 
@@ -103,15 +133,17 @@ async function testTarget() {
     option1();
     option2();
     option3();
+    // getProxy();
+    showLoading();
     output.insertAdjacentHTML("beforeend", "Testing..." + "<br><br>");
-    results.innerHTML = "Testing...";
     try {
         response = await fetch(payload);
         data = await response.text();
         output.insertAdjacentText("beforeend", data);
+        showLoading();
     }
     catch (error) {
-        results.innerHTML = error;
+        showLoading();
         output.insertAdjacentText("beforeend", error);
         console.log(error);
     }

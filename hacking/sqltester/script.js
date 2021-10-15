@@ -3,7 +3,7 @@
 // const proxy = "https://cors.bridged.cc/";
 
 // works
-const proxy = "https://api.codetabs.com/v1/proxy?quest=";
+// const proxy = https://api.codetabs.com/v1/proxy?quest=
 
 // doesnt work
 // const proxy = "https://crossorigin.me/";
@@ -45,6 +45,21 @@ function getURL(input) {
     target = input.value;
     console.log("Target:" + target);
     return target;
+}
+
+// validate proxy
+function proxyValidation() {
+    if (document.getElementById("proxy").value.length == 0) {
+        output.innerHTML = "Please enter in a proxy.";
+        return false;
+    }
+}
+
+// set proxy for cors
+function getProxy() {
+    proxy = document.getElementById("proxy").value;
+    console.log("Proxy: " + proxy);
+    return proxy;
 }
 
 // If first payload is checked
@@ -91,22 +106,14 @@ function option4() {
     }
 }
 
-// set proxy for cors
-// function getProxy() {
-//     if (document.getElementById("proxy1").checked) {
-//         proxy = "https://api.codetabs.com/v1/proxy?quest=";
-//     } else if (document.getElementById("proxy2").checked) {
-//         proxy = "https://crossorigin.me/";
-//     } else if (document.getElementById("proxy3").checked) {
-//         proxy = "https://cors.bridged.cc/";
-//     } else {
-//         proxy = "https://api.codetabs.com/v1/proxy?quest=";
-//     }
-// }
-
-// output results to proof section
+// output results to test  section
 function resultsProof() {
-    output.insertAdjacentHTML("beforeend", "Results: ");
+    output.insertAdjacentHTML("beforeend", "Proof: " + "<br><br>");
+}
+
+// output final results to test section
+function resultsResults() {
+    output.insertAdjacentHTML("beforeend", "Results: ")
 }
 
 // Show testing status spinner
@@ -149,12 +156,14 @@ document.getElementById("download-btn")
 async function testTarget() {
     getDate();
     inputValidation();
+    proxyValidation();
+    getProxy();
     output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
     option1();
     option2();
     option3();
     option4();
-    // getProxy();
+    output.insertAdjacentHTML("beforeend", "Proxy: " + proxy + "<br><br>")
     showLoading();
     output.insertAdjacentHTML("beforeend", "Response Body:" + "<br><br>");
     try {
@@ -163,13 +172,13 @@ async function testTarget() {
         output.insertAdjacentText("beforeend", data);
         output.insertAdjacentHTML("beforeend", "<br><br>");
         resultsProof();
+        resultsResults();
     }
     catch (error) {
         showLoading();
         output.insertAdjacentText("beforeend", error);
         console.log(error);
     }
-
     showLoading();
     return;
 }

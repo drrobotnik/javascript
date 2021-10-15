@@ -33,7 +33,7 @@ body {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  top: 100px;
+  top: 80px;
   height: 600px;
   width: 100%;
 }
@@ -43,20 +43,18 @@ body {
   padding: 2rem;
   border-radius: 1rem 0rem 0rem 1rem;
   border: 2px solid black;
-  width: 480px;
-  height: 720px;
+  width: 540px;
+  height: 760px;
   box-sizing: border-box;
 }
 
 .target-area {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  height: 150px;
   max-width: 500px;
   width: 100%;
-  margin-bottom: 10px;
+  margin: 40px 0px 40px 0px;
 }
 
 .target-icon {
@@ -74,7 +72,6 @@ body {
 .target-box {
   background-color: white;
   color: black;
-  margin: 40px 0px 40px 0px;
   padding: 0.5rem;
   border: 1px solid #333;
   height: 2rem;
@@ -190,7 +187,7 @@ label {
   position: relative;
   margin-right: 0px;
   left: -100px;
-  width: 200px;
+  width: 220px;
   font-size: 1.2rem;
 }
 
@@ -202,10 +199,22 @@ label {
   margin-bottom: 20px;
 }
 
-.proxy-block {
+.proxy-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.proxy-link {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 100%;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1rem;
 }
 
 .btn {
@@ -279,8 +288,8 @@ label {
   padding: 0.5rem;
   border-radius: 0rem 1rem 1rem 0rem;
   border: 2px solid black;
-  width: 480px;
-  height: 720px;
+  width: 540px;
+  height: 760px;
 }
 
 .output-field {
@@ -331,5 +340,13 @@ label {
   }
   .tester {
     width: 100%;
+  }
+
+  .custom-payload {
+    position: relative;
+    margin-right: 0px;
+    left: -90px;
+    width: 160px;
+    font-size: 1.2rem;
   }
 }

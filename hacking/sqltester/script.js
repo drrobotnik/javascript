@@ -20,18 +20,18 @@ const outputResults = document.getElementById("output");
 
 
 // input validation
-function inputValidation(input) {
-    let validURL;
-    if (document.getElementById("getURL").value.length == 0) {
-        output.innerHTML = "Please enter in a target URL.";
-    }
-    try {
-        validURL = new URL(input);
-    } catch (error) {
-        return false;
-    }
-    return validURL.protocol === "http:" || validURL.protocol === "https:";
-}
+// function inputValidation(input) {
+//     let validURL;
+//     if (document.getElementById("getURL").value.length == 0) {
+//         output.innerHTML = "Please enter in a target URL.";
+//     }
+//     try {
+//         validURL = new URL(input);
+//     } catch (error) {
+//         return false;
+//     }
+//     return validURL.protocol === "http:" || validURL.protocol === "https:";
+// }
 
 function getDate() {
     const date = new Date();
@@ -42,21 +42,60 @@ function getDate() {
 
 // Get user input url
 function getURL(input) {
+    if (document.getElementById("getURL").value.length == 0) {
+        output.innerHTML = "Please enter in a target URL.";
+        return false;
+    }
     target = input.value;
+    output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
     console.log("Target:" + target);
     return target;
 }
 
-// validate proxy
-function proxyValidation() {
+// toggle switches so only 1 can be active at a time
+const option1Toggle = document.getElementById("1");
+const option2Toggle = document.getElementById("2");
+const option3Toggle = document.getElementById("3");
+const option4Toggle = document.getElementById("4");
+
+const resettableElements = [
+    option1Toggle,
+    option2Toggle,
+    option3Toggle,
+    option4Toggle,
+];
+
+function toggleElement(element) {
+    resettableElements.forEach((node) => {
+        node.style.display = "none";
+    });
+    element.style.display = "block";
+}
+
+function toggleOption1() {
+    toggleElement(option1Toggle);
+}
+
+function toggleOption2() {
+    toggleElement(option2Toggle);
+}
+
+function toggleOption3() {
+    toggleElement(option3Toggle);
+}
+
+function toggleOption4() {
+    toggleElement(option4Toggle);
+}
+
+
+
+// set proxy for cors
+function getProxy() {
     if (document.getElementById("proxy").value.length == 0) {
         output.innerHTML = "Please enter in a proxy.";
         return false;
     }
-}
-
-// set proxy for cors
-function getProxy() {
     proxy = document.getElementById("proxy").value;
     console.log("Proxy: " + proxy);
     return proxy;
@@ -155,10 +194,8 @@ document.getElementById("download-btn")
 
 async function testTarget() {
     getDate();
-    inputValidation();
-    proxyValidation();
+
     getProxy();
-    output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
     option1();
     option2();
     option3();

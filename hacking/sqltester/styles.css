@@ -44,7 +44,7 @@ body {
   border-radius: 1rem 0rem 0rem 1rem;
   border: 2px solid black;
   width: 480px;
-  height: 680px;
+  height: 720px;
   box-sizing: border-box;
 }
 
@@ -163,7 +163,7 @@ body {
 .payload-description {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 50%;
 }
 
 .payload {
@@ -184,6 +184,14 @@ label {
 [type="checkbox"] {
   position: absolute;
   left: -9999px;
+}
+
+.custom-payload {
+  position: relative;
+  margin-right: 0px;
+  left: -100px;
+  width: 200px;
+  font-size: 1.2rem;
 }
 
 .proxy-container {
@@ -272,7 +280,7 @@ label {
   border-radius: 0rem 1rem 1rem 0rem;
   border: 2px solid black;
   width: 480px;
-  height: 680px;
+  height: 720px;
 }
 
 .output-field {
@@ -318,7 +326,7 @@ label {
     justify-content: center;
     flex-wrap: wrap;
     top: 100px;
-    height: 600px;
+    height: 720px;
     width: 100vw;
   }
   .tester {

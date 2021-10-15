@@ -48,6 +48,16 @@
             <span></span>
           </label>
         </li>
+        <li>
+          <input type="checkbox" id="4">
+          <label for="4">
+            <span class="payload-description">Custom</span>
+            <div class="payload">
+              <input id="custom-payload" class="custom-payload" type="text" onchange="getCustomPayload(this);">
+            </div>
+            <span></span>
+          </label>
+        </li>
       </div>
 
       <div class="proxy-container">
@@ -81,9 +91,7 @@
       </div>
     </div>
     <div class="proof">
-      <div id="output" class="output-field">
-        Output:
-      </div>
+      <div id="output" class="output-field"></div>
       <div class="download-print-container">
         <div>
           <button class="proof-btn" id="print-btn">Print</button>

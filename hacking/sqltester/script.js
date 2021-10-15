@@ -15,6 +15,8 @@ const logic = "1+1";
 
 const results = document.getElementById("results");
 const output = document.getElementById("output");
+const outputProof = document.getElementById("output");
+const outputResults = document.getElementById("output");
 
 
 // input validation
@@ -34,7 +36,7 @@ function inputValidation(input) {
 function getDate() {
     const date = new Date();
     date.textContent = date.toDateString() + ' ' + date.toLocaleTimeString('en-US');
-    output.innerHTML = date.textContent;
+    output.innerHTML = date.textContent + "<br><br>";
 }
 
 
@@ -42,7 +44,6 @@ function getDate() {
 function getURL(input) {
     target = input.value;
     console.log("Target:" + target);
-
     return target;
 }
 
@@ -76,6 +77,20 @@ function option3() {
     }
 }
 
+// Get custom payload
+function getCustomPayload(custom) {
+    customPayload = custom.value;
+    console.log("Payload: " + customPayload);
+}
+
+// If custom option is checked
+function option4() {
+    if (document.getElementById("4").checked) {
+        payload = proxy + target + customPayload;
+        output.insertAdjacentHTML('beforeend', 'Payload: ' + customPayload + "<br><br>");
+    }
+}
+
 // set proxy for cors
 // function getProxy() {
 //     if (document.getElementById("proxy1").checked) {
@@ -88,6 +103,11 @@ function option3() {
 //         proxy = "https://api.codetabs.com/v1/proxy?quest=";
 //     }
 // }
+
+// output results to proof section
+function resultsProof() {
+    output.insertAdjacentHTML("beforeend", "Results: ");
+}
 
 // Show testing status spinner
 function showLoading() {
@@ -129,24 +149,28 @@ document.getElementById("download-btn")
 async function testTarget() {
     getDate();
     inputValidation();
-    output.innerHTML = "Target: " + target + "<br><br>";
+    output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
     option1();
     option2();
     option3();
+    option4();
     // getProxy();
     showLoading();
-    output.insertAdjacentHTML("beforeend", "Testing..." + "<br><br>");
+    output.insertAdjacentHTML("beforeend", "Response Body:" + "<br><br>");
     try {
         response = await fetch(payload);
         data = await response.text();
         output.insertAdjacentText("beforeend", data);
-        showLoading();
+        output.insertAdjacentHTML("beforeend", "<br><br>");
+        resultsProof();
     }
     catch (error) {
         showLoading();
         output.insertAdjacentText("beforeend", error);
         console.log(error);
     }
+
+    showLoading();
     return;
 }
 

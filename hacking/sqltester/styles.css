@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
 
 :root {
   --background: #333;
@@ -46,6 +46,12 @@ body {
   width: 540px;
   height: 760px;
   box-sizing: border-box;
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  text-align: center;
 }
 
 .target-area {
@@ -169,11 +175,6 @@ body {
   width: 30%;
 }
 
-.title {
-  margin: 0;
-  text-align: center;
-}
-
 label {
   font-weight: bold;
 }
@@ -218,7 +219,6 @@ label {
 }
 
 .btn {
-  grid-column: span 2;
   background-color: transparent;
   border: 2px solid white;
   color: white;
@@ -247,13 +247,36 @@ label {
 
 .pass {
   display: none;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  font-weight: 700;
   font-size: 3rem;
+  color: green;
+}
+
+.pass-text {
+  margin-left: 15px;
+  font-size: 2rem;
+  font-style: normal;
   color: green;
 }
 
 .fail {
   display: none;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  font-weight: 700;
   font-size: 3rem;
+  color: red;
+}
+
+.fail-text {
+  margin-left: 15px;
+  font-size: 2rem;
   color: red;
 }
 
@@ -264,6 +287,7 @@ label {
 .spinner {
   font-size: 3rem;
   color: rgb(78, 46, 46);
+  font-weight: 700;
   -webkit-animation: spinner 1.5s linear infinite; /* Safari */
   animation: spinner 0.3s linear infinite;
 }
@@ -282,6 +306,13 @@ label {
   margin-left: 10px;
 }
 
+.results-title {
+  position: relative;
+  top: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
 .proof {
   background-color: #006699;
   box-sizing: border-box;
@@ -293,10 +324,12 @@ label {
 }
 
 .output-field {
+  position: relative;
   background: var(--charcoal);
+  top: 0px;
   width: 100%;
-  height: 90%;
-  border-radius: 0rem 1rem 1rem 0rem;
+  height: 85%;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
   padding: 1rem;
   margin-bottom: 20px;
   font-size: 14px;
@@ -307,6 +340,7 @@ label {
 }
 
 .download-print-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -334,12 +368,23 @@ label {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    top: 100px;
-    height: 720px;
+    top: 0px;
+    height: 100%;
     width: 100vw;
   }
+
   .tester {
-    width: 100%;
+    width: 540px;
+    height: 800px;
+    box-sizing: border-box;
+  }
+
+  .output-field {
+    position: relative;
+    background: var(--charcoal);
+    top: 0px;
+    width: 390px;
+    height: 85%;
   }
 
   .custom-payload {

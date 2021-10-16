@@ -25,7 +25,7 @@
       <div class="payload-options">Payload Options</div>
       <div class="switches">
         <li>
-          <input type="checkbox" id="1" onclick="toggleOption1()">
+          <input type="checkbox" id="1" onclick="toggleOption1()" checked>
           <label for="1">
             <span class="payload-description">Single tick</span>
             <div class="payload">'</div>
@@ -73,9 +73,11 @@
       <div class="results-box">
         <div class="pass">
           <i class="far fa-check-circle"></i>
+          <div class="pass-text">Pass: See Results</div>
         </div>
         <div class="fail">
           <i class="far fa-times-circle"></i>
+          <div class="fail-text">Fail: See Results</div>
         </div>
         <div id="testing" class="testing">
           <i class="fas fa-spinner spinner"></i>
@@ -83,7 +85,9 @@
         <div id="results" class="results"></div>
       </div>
     </div>
+
     <div class="proof">
+      <div class="results-title">Results:</div>
       <div id="output" class="output-field"></div>
       <div class="download-print-container">
         <div>

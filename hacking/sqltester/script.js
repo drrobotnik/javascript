@@ -20,34 +20,30 @@ const outputResults = document.getElementById("output");
 
 
 // input validation
-// function inputValidation(input) {
-//     let validURL;
-//     if (document.getElementById("getURL").value.length == 0) {
-//         output.innerHTML = "Please enter in a target URL.";
-//     }
-//     try {
-//         validURL = new URL(input);
-//     } catch (error) {
-//         return false;
-//     }
-//     return validURL.protocol === "http:" || validURL.protocol === "https:";
-// }
+function inputValidation(input) {
+    let validURL;
+    if (document.getElementById("getURL").value.length == 0) {
+        output.innerHTML = "Please enter in a target URL.";
+    }
+    try {
+        validURL = new URL(input);
+    } catch (error) {
+        return false;
+    }
+    return validURL.protocol === "http:" || validURL.protocol === "https:";
+}
 
 function getDate() {
     const date = new Date();
     date.textContent = date.toDateString() + ' ' + date.toLocaleTimeString('en-US');
-    output.innerHTML = date.textContent + "<br><br>";
+    output.innerHTML = "Scan time: " + date.textContent + "<br><br>";
 }
 
 
 // Get user input url
 function getURL(input) {
-    if (document.getElementById("getURL").value.length == 0) {
-        output.innerHTML = "Please enter in a target URL.";
-        return false;
-    }
     target = input.value;
-    output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
+
     console.log("Target:" + target);
     return target;
 }
@@ -88,17 +84,16 @@ function toggleOption4() {
     toggleElement(option4Toggle);
 }
 
-
-
 // set proxy for cors
 function getProxy() {
     if (document.getElementById("proxy").value.length == 0) {
         output.innerHTML = "Please enter in a proxy.";
-        return false;
+        return;
+    } else {
+        proxy = document.getElementById("proxy").value;
+        console.log("Proxy: " + proxy);
+        return proxy;
     }
-    proxy = document.getElementById("proxy").value;
-    console.log("Proxy: " + proxy);
-    return proxy;
 }
 
 // If first payload is checked
@@ -194,7 +189,8 @@ document.getElementById("download-btn")
 
 async function testTarget() {
     getDate();
-
+    inputValidation();
+    output.insertAdjacentHTML("beforeend", "Target: " + target + "<br><br>");
     getProxy();
     option1();
     option2();
@@ -202,10 +198,11 @@ async function testTarget() {
     option4();
     output.insertAdjacentHTML("beforeend", "Proxy: " + proxy + "<br><br>")
     showLoading();
-    output.insertAdjacentHTML("beforeend", "Response Body:" + "<br><br>");
     try {
         response = await fetch(payload);
+        output.insertAdjacentHTML("beforeend", "Response Code: " + response.status + "<br><br>");
         data = await response.text();
+        output.insertAdjacentHTML("beforeend", "Response Body:" + "<br><br>");
         output.insertAdjacentText("beforeend", data);
         output.insertAdjacentHTML("beforeend", "<br><br>");
         resultsProof();

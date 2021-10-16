@@ -63,7 +63,7 @@ li:hover {
   left: 0;
   height: 100%;
   background-color: #1b1b1b;
-  width: 130px;
+  width: 110px;
 }
 
 .logo {
@@ -131,7 +131,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: 50px;
+  left: 30px;
   width: 85%;
   height: 100%;
 }

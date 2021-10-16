@@ -281,7 +281,7 @@ label {
 }
 
 .testing {
-  display: block;
+  display: flex;
 }
 
 .spinner {

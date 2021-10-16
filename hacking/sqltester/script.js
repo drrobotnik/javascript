@@ -19,7 +19,7 @@ const outputProof = document.getElementById("output");
 const outputResults = document.getElementById("output");
 
 
-// input validation
+// input validation (doesnt work)
 function inputValidation(input) {
     let validURL;
     if (document.getElementById("getURL").value.length == 0) {
@@ -33,6 +33,7 @@ function inputValidation(input) {
     return validURL.protocol === "http:" || validURL.protocol === "https:";
 }
 
+// get date
 function getDate() {
     const date = new Date();
     date.textContent = date.toDateString() + ' ' + date.toLocaleTimeString('en-US');
@@ -48,7 +49,7 @@ function getURL(input) {
     return target;
 }
 
-// toggle switches so only 1 can be active at a time
+// toggle switches so only 1 can be active at a time (doesnt work)
 const option1Toggle = document.getElementById("1");
 const option2Toggle = document.getElementById("2");
 const option3Toggle = document.getElementById("3");
@@ -154,7 +155,7 @@ function resultsResults() {
 function showLoading() {
     testing = document.getElementById("testing");
     if (testing.style.display === "none") {
-        testing.style.display = "block";
+        testing.style.display = "flex";
     } else {
         testing.style.display = "none";
     }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>Simple SQL Injection Test</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tester">
+      <h1 class="title">Simple <font color="red"> SQL</font> Injection Test</h1>
+      <div class="target-area">
+        <div class="target-icon">
+          <i class="fas fa-bug"></i>
+        </div>
+        <input type="url" placeholder="https://example.com/search_get_by_id.php?id=1" class="target-box" id="getURL"
+          onchange="getURL(this)" required></input>
+      </div>
+      <div class="payload-options">Payload Options</div>
+      <div class="switches">
+        <li>
+          <input type="checkbox" id="1" onclick="toggleOption1()" checked>
+          <label for="1">
+            <span class="payload-description">Single tick</span>
+            <div class="payload">'</div>
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="2" onclick="toggleOption2()">
+          <label for="2">
+            <span class="payload-description">Double quote</span>
+            <div class="payload">''</div>
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="3" onclick="toggleOption3()">
+          <label for="3">
+            <span class="payload-description">Logic</span>
+            <div class="payload">1 + 1</div>
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="4" onclick="toggleOption4()">
+          <label for="4">
+            <span class="payload-description">Custom</span>
+            <div class="payload">
+              <input id="custom-payload" class="custom-payload" type="text" onchange="getCustomPayload(this);">
+            </div>
+            <span></span>
+          </label>
+        </li>
+      </div>
+      <div class="proxy-title">Proxy</div>
+      <div class="proxy-container">
+        <div class="target-icon">
+          <i class="fas fa-link"></i>
+        </div>
+        <input type="url" placeholder="https://api.codetabs.com/v1/proxy?quest=" class="proxy-link" id="proxy"
+          value="https://api.codetabs.com/v1/proxy?quest=" onchange="getProxy(this)" required></input>
+      </div>
+
+      <button type="submit" class="btn" onClick="testTarget()">Test</button>
+
+      <div class="results-box">
+        <div class="pass">
+          <i class="far fa-check-circle"></i>
+          <div class="pass-text">Pass: See Results</div>
+        </div>
+        <div class="fail">
+          <i class="far fa-times-circle"></i>
+          <div class="fail-text">Fail: See Results</div>
+        </div>
+        <div id="testing" class="testing">
+          <i class="fas fa-spinner spinner"></i>
+        </div>
+        <div id="results" class="results"></div>
+      </div>
+    </div>
+
+    <div class="proof">
+      <div class="results-title">Results:</div>
+      <div id="output" class="output-field"></div>
+      <div class="download-print-container">
+        <div>
+          <button class="proof-btn" id="print-btn">Print</button>
+        </div>
+        <div>
+          <button class="proof-btn" id="download-btn">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

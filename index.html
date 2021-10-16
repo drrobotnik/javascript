@@ -1,74 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javascript Projects</title>
   <link rel="stylesheet" href="styles.css" />
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
+
 <body>
   <!-- Main Container -->
   <div class="container">
-    <!-- Navbar -->
+    <!-- Nav and Menu -->
     <div class="navbar">
-      <a href="https://nodisassemble.github.io/javascript/">
       <!-- Logo -->
-      <div class="logo">NoDisassemble</div>
-    </a>
-      <!-- Menu Items -->
-      <div class="menu">Projects</div>
-    </div>
-    <!-- Projects Container -->
-    <div class="projects-container">
-      <div class="projects-title">HTML | JS | CSS</div>
-      <div class="projects-cards">
-        <a href="https://nodisassemble.github.io/javascript/generators/jspwgen/" target="_blank">
-          <div class="card">
-            <h2>Password Generator</h2>
-            <p>HTML | JS | CSS</p>
-            <div class="card-icon-banner">
-              <div class="card-icon"><i class="fas fa-lock fa-6x"></i></div>
-            </div>
-          </div>
-         </a>
-        <a href="https://nodisassemble.github.io/javascript/weather/jsweatherapp/" target="_blank">
-            <div class="card">
-              <h2>Weather App</h2>
-              <p>HTML | JS | CSS</p>
-              <div class="card-icon-banner">
-                <div class="card-icon"><i class="fas fa-cloud-sun fa-6x"></i></div>
-            </div>
-          </div>
+      <div class="logo">
+        <a href="https://nodisassemble.github.io/javascript/">
+          <i class="fas fa-robot"></i>
         </a>
-        <a href="https://nodisassemble.github.io/javascript/calculators/jscalc" target="_blank">
-        <div class="card">
-          <h2>Calculator</h2>
-          <p>HTML | JS | CSS</p>
-          <div class="card-icon-banner">
-            <div class="card-icon"><i class="fas fa-calculator fa-6x"></i></div>
-          </div>
-        </div>
-        </a>
-        <a href="https://nodisassemble.github.io/javascript/clocks/handclock" target="_blank">
-        <div class="card">
-          <h2>Analog Clock</h2>
-          <p>HTML | JS | CSS</p>
-          <div class="card-icon-banner">
-            <div class="card-icon"><i class="fas fa-clock fa-6x"></i></div>
-          </div>
-        </div>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#" onclick='loadHtml("template", "hacking.html")'>
+              <i class="fas fa-user-secret"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick='loadHtml("template", "api.html")'>
+              <i class="fas fa-rocket"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick='loadHtml("template", "notes.html")'>
+              <i class="fas fa-clipboard-list"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick='loadHtml("template", "time.html")'>
+              <i class="fas fa-hourglass-half"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick='loadHtml("template", "calc.html")'>
+              <i class="fas fa-calculator"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-secret"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-secret"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="pizza">
+        <a href="https://www.buymeacoffee.com/ctftoolkit" target="_blank">
+          <i class="fas fa-pizza-slice"></i>
         </a>
       </div>
     </div>
-    <!-- Footer -->
+    <!-- Template -->
+    <div id="template" class="projects-container template">
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer-container">
     <div class="footer">
-      <a href="https://github.com/NoDisassemble/javascript" target="_blank">NoDisassemble</a>
-      <div class="date"><p id="showDate"></p></div>
+      <div class="link"><a href="https://github.com/NoDisassemble/" target="_blank">NoDisassemble</a></div>
+      <div class="date" id="showDate"></div>
     </div>
   </div>
   <script src="script.js"></script>
 </body>
+
 </html>

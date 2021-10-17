@@ -2,10 +2,10 @@ const dino = document.getElementById("dino");
 const rock = document.getElementById("rock");
 const score = document.getElementById("score");
 
-let jumpFX = new Audio("../assets/tRexJump-18db.mp3");
-let rockRoll = new Audio("../assets/rockRoll2db.mp3");
+let jumpFX = new Audio("./assets/tRexJump-18db.mp3");
+let rockRoll = new Audio("./assets/rockRoll2db.mp3");
 
-myAudio = new Audio('../assets/alteredStateIntroLoop-12db.mp3');
+myAudio = new Audio('./assets/alteredStateIntroLoop-12db.mp3');
 if (typeof myAudio.loop == 'boolean') {
     myAudio.loop = true;
 }

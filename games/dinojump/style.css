@@ -26,7 +26,7 @@ body {
   height: 500px;
   border: 2px solid black;
   margin: auto;
-  background-image: url("../assets/background.gif");
+  background-image: url("./assets/background.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -36,7 +36,7 @@ body {
   width: 300px;
   position: relative;
   top: 280px;
-  background-image: url("../assets/dino.png");
+  background-image: url("./assets/dino.png");
   background-size: cover;
 }
 
@@ -45,7 +45,7 @@ body {
   width: 80px;
   position: relative;
   top: 198px;
-  background-image: url("../assets/rock.png");
+  background-image: url("./assets/rock.png");
   background-size: cover;
   left: 920px;
   animation: linear rock 1.5s infinite;

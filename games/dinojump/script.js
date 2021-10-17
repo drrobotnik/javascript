@@ -5,29 +5,29 @@ const score = document.getElementById("score");
 let jumpFX = new Audio("./assets/tRexJump-18db.mp3");
 let rockRoll = new Audio("./assets/rockRoll2db.mp3");
 
-myAudio = new Audio('./assets/alteredStateIntroLoop-12db.mp3');
-if (typeof myAudio.loop == 'boolean') {
-    myAudio.loop = true;
+bgAudio = new Audio('./assets/alteredStateIntroLoop-12db.mp3');
+if (typeof bgAudio.loop == 'boolean') {
+    bgAudio.loop = true;
 }
 else {
-    myAudio.addEventListener('ended', function () {
+    bgAudio.addEventListener('ended', function () {
         this.currentTime = 0;
         this.play();
     }, false);
 }
-myAudio.play();
+bgAudio.play();
 
 
 function jump() {
     dino.classList.add("jump-animation");
     setTimeout(() =>
         dino.classList.remove("jump-animation"), 500);
+    jumpFX.play();
 }
 
 document.addEventListener('keypress', (event) => {
     if (!dino.classList.contains('jump-animation')) {
         jump();
-        jumpFX.play();
     }
 
 })

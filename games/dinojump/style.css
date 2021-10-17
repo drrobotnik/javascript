@@ -103,3 +103,22 @@ body {
   border-radius: 10px;
   color: white;
 }
+
+.btn-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 150px;
+  padding: 5px;
+  margin: auto;
+  font-size: 2rem;
+  border-radius: 15px;
+  background: red;
+}

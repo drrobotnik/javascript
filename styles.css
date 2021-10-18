@@ -21,14 +21,13 @@ a {
   color: white;
 }
 
-li a {
+.link a {
   text-decoration: none;
   color: rgb(110, 90, 110);
 }
 
 .active,
-.links,
-li:hover {
+.link:hover {
   background-color: #ff8177;
   background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
   background-size: 100%;
@@ -40,6 +39,7 @@ li:hover {
   color: rgb(145, 86, 145);
   transition: ease-in 200ms;
   transform: scale(1.3);
+  z-index: 99999;
 }
 
 .pizza a:hover {
@@ -111,12 +111,49 @@ li:hover {
   display: none;
 }
 
-li {
+.link {
   display: flex;
   justify-content: center;
   padding: 20px 40px 50px 40px;
   box-sizing: border-box;
   font-size: 3rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  width: 200px !important;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px !important;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  z-index: 9999;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  width: 200px !important;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .pizza {
@@ -237,12 +274,12 @@ li {
   height: 50px;
 }
 
-.link a {
+.links a {
   display: flex;
   color: white;
 }
 
-.link a:hover {
+.links a:hover {
   color: purple;
 }
 

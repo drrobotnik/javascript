@@ -1,6 +1,6 @@
 
 function createDivs() {
-    for (let div = 0; div < 98; div++) {
+    for (let div = 0; div < 54; div++) {
         cell = document.createElement("div");
         document.querySelector(".grid").appendChild(cell);
         cell.classList.add("cell");
@@ -10,8 +10,8 @@ createDivs();
 
 
 const cells = Array.from(document.querySelectorAll(".cell"));
-const enemyCells = cells.slice(0, 85);
-const playerCells = cells.slice(85);
+const enemyCells = cells.slice(0, 45);
+const playerCells = cells.slice(45);
 const scoreDisplay = document.querySelector(".score");
 
 
@@ -42,7 +42,7 @@ function reset() {
     scoreDisplay.innerHTML = "0";
 
     cells.forEach(cell => cell.innerHTML = "");
-    playerCells[6].innerHTML = '<div class="player"></div>';
+    playerCells[4].innerHTML = '<div class="player"></div>';
 }
 
 function startGame() {
@@ -55,7 +55,7 @@ function loop() {
 
     for (let i = enemyCells.length - 1; i >= 0; i--) {
         const cell = enemyCells[i];
-        const nextCell = cells[i + 13];
+        const nextCell = cells[i + 9];
         const enemy = cell.children[0];
 
         if (!enemy) {

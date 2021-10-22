@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Automation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form" class="form">
+            <button class="btn" onClick="autoFill()">Autofill & Submit</button>
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" class="name" id="name" name="name">
+            </div>
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="text" class="email" id="email" name="email">
+            </div>
+            <div class="row">
+                <label for="comment">Comment:</label>
+                <textarea type="text" class="comment" id="comment" name="comment" rows="8" cols="21"></textarea>
+            </div>
+            <button class="submit-btn">Submit</button>
+        </form>
+        <div class="btn-container">
+            <button type="submit" class="clear" onclick="clearForm()">Clear Form</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -9,6 +9,7 @@ let speed = 100;
 
 
 function autoFill() {
+    console.log("Autofilling form...")
     return new Promise((resolve) => {
         if (a < nameTxt.length) {
             document.getElementById("name").value += nameTxt.charAt(a);

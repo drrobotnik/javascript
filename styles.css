@@ -114,7 +114,7 @@ a {
 .link {
   display: flex;
   justify-content: center;
-  padding: 20px 40px 50px 40px;
+  padding: 20px 40px 40px 40px;
   box-sizing: border-box;
   font-size: 3rem;
 }
